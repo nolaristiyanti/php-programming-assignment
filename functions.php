@@ -114,4 +114,49 @@
     // printReceipt(hitungTotalBelanja($productCustomer2, true));
     // printReceipt(hitungTotalBelanja($productCustomer3, false));
     printReceipt(hitungTotalBelanja($productCustomer4, true));
+
+    heading("Soal 4: Data Siswa & Rekap Nilai (Array Multidimensi, Looping, Function)");
+
+    function prosesDataSiswa($dataSiswa): array {
+        foreach($dataSiswa as &$data) {
+            $rataRata = round(array_sum($data['nilai']) / count($data['nilai']), 2);
+            $data['rataRata'] = $rataRata;
+            if($rataRata >= 85) {
+                 $data['status'] = "Lulus dengan pujian";
+            } else if($rataRata >= 70) {
+                $data['status'] = "Lulus";
+            } else {
+                $data['status'] = "Remedial";
+            }
+        }
+
+        return $dataSiswa;
+    }
+
+    function filterSiswa(array $students): array {
+        $siswaLulus = [];
+        foreach($students as $student) {
+            if($student['status'] !== "Remedial") {
+                $siswaLulus[] = $student;
+            }
+        }
+
+        return $siswaLulus;
+    }
+
+    $students = [
+        ["nama" => "Budi", "jurusan" => "RPL", "nilai" => [80, 90, 75]],
+        ["nama" => "Nola", "jurusan" => "TKJ", "nilai" => [85, 95, 90]],
+        ["nama" => "Risti", "jurusan" => "TBG", "nilai" => [65, 70, 60]],
+    ];
+
+    $result = filterSiswa(prosesDataSiswa($students));
+
+    foreach($result as $student) {
+        echo 'Nama : ' . $student['nama'] . PHP_EOL;
+        echo 'Jurusan : ' . $student['jurusan'] . PHP_EOL;
+        echo 'Rata-rata : ' . $student['rataRata'] . PHP_EOL;
+        echo 'Status : ' . $student['status'] . PHP_EOL;
+        echo PHP_EOL;
+    }
 ?>
