@@ -9,3 +9,6 @@ Skenario : Non-member dengan total qty kecil.
 <img width="2381" height="463" alt="image" src="https://github.com/user-attachments/assets/d3bd1d5e-e553-4497-bcb4-8583965cd259" />
 Skenario : Member dengan total qty > 5.
 <img width="2364" height="478" alt="image" src="https://github.com/user-attachments/assets/7de01669-b444-4809-80a4-5c94e4aa9783" />
+
+Soal 4: Data Siswa & Rekap Nilai (Array Multidimensi, Looping, Function)
+<img width="2373" height="508" alt="image" src="https://github.com/user-attachments/assets/0a0693ad-c3ce-463f-8bc0-18661d491e16" />
